@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/";
 import { CssBaseline } from "@mui/material";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Actors, MovieInformation, Movies, NavBar, Profile } from ".";
 import useStyles from "./styles";
 
@@ -33,10 +34,13 @@ const App = () => {
   );
 };
 
+const theme = createTheme({});
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <ThemeProvider theme={theme}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </ThemeProvider>,
   document.getElementById("root")
 );
 
